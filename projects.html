@@ -5,47 +5,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects - Munyao Emmanuel Adika</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Roboto:wght@400&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <nav>
-            <div class="logo">Munyao Emmanuel Adika</div>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="skills.html">Skills</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+    <!-- Header Placeholder -->
+    <div id="header"></div>
 
     <!-- Projects Section -->
     <main>
-        <section id="projects" class="section">
+        <section id="projects" class="section parallax-section">
             <h2>My Projects</h2>
-            <div class="projects-grid">
-                <!-- Projects will be dynamically inserted here -->
-                <!-- Example: 
-                <div class="project-card">
-                    <h3>Project Title</h3>
-                    <p>Description</p>
-                    <p><strong>Technologies:</strong> Tech1, Tech2</p>
+            <p>These projects are sourced from my PostgreSQL database, demonstrating my work in data analytics.</p>
+            <div class="projects-container">
+                <div class="project-card glass-card">
+                    <div class="parallax-bg" style="background-image: url('project1.jpg');"></div>
+                    <div class="project-content">
+                        <h3>Business Performance Dashboard</h3>
+                        <p>Developed a Power BI dashboard at Juniper Intakes Limited to track business performance metrics, supporting data-driven strategies.</p>
+                        <p><strong>Technologies:</strong> Power BI, SQL</p>
+                    </div>
                 </div>
-                -->
+                <div class="project-card glass-card">
+                    <div class="parallax-bg" style="background-image: url('project2.jpg');"></div>
+                    <div class="project-content">
+                        <h3>Automated Reporting Workflow</h3>
+                        <p>Automated data reporting at GOMYCODE, reducing turnaround time by 20% for learner progress insights.</p>
+                        <p><strong>Technologies:</strong> Python, Power BI</p>
+                    </div>
+                </div>
+                <div class="project-card glass-card">
+                    <div class="parallax-bg" style="background-image: url('project3.jpg');"></div>
+                    <div class="project-content">
+                        <h3>Predictive Model for Client Retention</h3>
+                        <p>Built a predictive model at Dlight Solar Kenya, increasing customer satisfaction by 10%.</p>
+                        <p><strong>Technologies:</strong> Python, SQL</p>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
-    <footer>
-        <p>© 2025 Munyao Emmanuel Adika. All rights reserved.</p>
-        <div class="social-links">
-            <a href="https://linkedin.com/in/your-linkedin" target="_blank">LinkedIn</a> | 
-            <a href="https://github.com/adikamunyao" target="_blank">GitHub</a> | 
-            <a href="mailto:your-email@example.com">Email</a>
-        </div>
-    </footer>
+    <!-- Footer Placeholder -->
+    <div id="footer"></div>
+
+    <!-- JavaScript to Include Header and Footer -->
+    <script>
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header').innerHTML = data;
+            });
+
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer').innerHTML = data;
+            });
+    </script>
 </body>
 </html>
