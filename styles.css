@@ -2,6 +2,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: #0A0F1A; /* Dark navy background for a futuristic look */
+    color: #E0E0E0; /* Light gray text for contrast */
     font-family: 'Arial', sans-serif;
 }
 
@@ -13,6 +19,12 @@ body {
 
 /* Header */
 header {
+    background-color: rgba(0, 128, 128, 0.8); /* Teal with transparency */
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(10px); /* Glassmorphism effect */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
     background-color: #008080;
     position: sticky;
     top: 0;
@@ -28,6 +40,12 @@ nav {
 }
 
 .logo {
+    color: #FF6F61; /* Coral accent for the logo */
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(255, 111, 97, 0.5);
     color: #FFFFFF;
     font-size: 1.5rem;
     font-weight: bold;
@@ -41,21 +59,37 @@ nav ul {
 }
 
 nav ul li a {
+    color: #E0E0E0;
     color: #FFFFFF;
     text-decoration: none;
     font-weight: 500;
     padding: 0.5rem 1rem;
     border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
     transition: background-color 0.3s, color 0.3s;
 }
 
 nav ul li a:hover {
     background-color: #FF6F61;
+    color: #0A0F1A;
+    box-shadow: 0 0 15px rgba(255, 111, 97, 0.5);
     color: #FFFFFF;
 }
 
 /* Hero Section */
 .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    background: linear-gradient(135deg, #0A0F1A 0%, #1A2A44 100%);
+}
+
+.particle-background {
+=======
     background: linear-gradient(135deg, #008080 0%, #006666 100%);
     color: #FFFFFF;
     text-align: center;
@@ -71,6 +105,22 @@ nav ul li a:hover {
     left: 0;
     width: 100%;
     height: 100%;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="10" cy="10" r="2" fill="rgba(0,128,128,0.3)" /><circle cx="90" cy="90" r="3" fill="rgba(255,111,97,0.3)" /><circle cx="50" cy="50" r="1" fill="rgba(255,255,255,0.2)" /></svg>') repeat;
+    animation: particleMove 30s linear infinite;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 4rem;
+    color: #FF6F61;
+    text-shadow: 0 0 20px rgba(255, 111, 97, 0.7), 0 0 40px rgba(0, 128, 128, 0.5);
+    margin-bottom: 1rem;
+    animation: neonGlow 2s infinite alternate;
     background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="rgba(255,255,255,0.1)" /><circle cx="20" cy="20" r="10" fill="rgba(255,255,255,0.1)" /><circle cx="80" cy="80" r="15" fill="rgba(255,255,255,0.1)" /></svg>') repeat;
     animation: moveBackground 20s linear infinite;
 }
@@ -83,6 +133,26 @@ nav ul li a:hover {
 
 .hero p {
     font-size: 1.5rem;
+    color: #E0E0E0;
+    margin-bottom: 2rem;
+    text-shadow: 0 0 10px rgba(0, 128, 128, 0.3);
+}
+
+.cta-button {
+    background: linear-gradient(45deg, #FF6F61, #008080);
+    color: #FFFFFF;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    font-family: 'Orbitron', sans-serif;
+    box-shadow: 0 0 15px rgba(255, 111, 97, 0.5);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.cta-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 25px rgba(255, 111, 97, 0.8);
     margin-bottom: 2rem;
     animation: fadeIn 1.5s ease-in;
 }
@@ -108,6 +178,34 @@ nav ul li a:hover {
 .section {
     padding: 4rem 2rem;
     text-align: center;
+    background: rgba(26, 42, 68, 0.8); /* Semi-transparent dark background */
+    margin: 2rem 1rem;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 128, 128, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(0, 128, 128, 0.1) 0%, transparent 70%);
+    z-index: 0;
+}
+
+.section h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3rem;
+    color: #FF6F61;
+    text-shadow: 0 0 15px rgba(255, 111, 97, 0.5);
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 1;
+=======
     background-color: #FFFFFF;
     margin: 2rem 0;
     border-radius: 10px;
@@ -136,6 +234,9 @@ nav ul li a:hover {
     max-width: 800px;
     margin: 0 auto 2rem;
     line-height: 1.6;
+    color: #B0B0B0;
+    position: relative;
+    z-index: 1;
 }
 
 /* Skills Section */
@@ -145,6 +246,15 @@ nav ul li a:hover {
     gap: 1.5rem;
     max-width: 1000px;
     margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.skill-card {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.2rem;
+    padding: 1.5rem;
+    border-radius: 15px;
 }
 
 .skill-card {
@@ -156,6 +266,78 @@ nav ul li a:hover {
     position: relative;
     overflow: hidden;
     transition: transform 0.3s, box-shadow 0.3s;
+    animation: pulseGlow 3s infinite;
+}
+
+.skill-card:hover {
+    transform: translateY(-10px) rotate(2deg);
+}
+
+/* Individual Skill Colors */
+.skill-sql {
+    background: linear-gradient(45deg, #008080, #00CED1);
+    border: 2px solid #00CED1;
+    box-shadow: 0 0 20px rgba(0, 206, 209, 0.5);
+    text-shadow: 0 0 10px rgba(0, 206, 209, 0.7);
+}
+
+.skill-sql:hover {
+    box-shadow: 0 0 30px rgba(0, 206, 209, 0.8);
+}
+
+.skill-powerbi {
+    background: linear-gradient(45deg, #FF6F61, #FF8C00);
+    border: 2px solid #FF8C00;
+    box-shadow: 0 0 20px rgba(255, 140, 0, 0.5);
+    text-shadow: 0 0 10px rgba(255, 140, 0, 0.7);
+}
+
+.skill-powerbi:hover {
+    box-shadow: 0 0 30px rgba(255, 140, 0, 0.8);
+}
+
+.skill-python {
+    background: linear-gradient(45deg, #32CD32, #ADFF2F);
+    border: 2px solid #ADFF2F;
+    box-shadow: 0 0 20px rgba(173, 255, 47, 0.5);
+    text-shadow: 0 0 10px rgba(173, 255, 47, 0.7);
+}
+
+.skill-python:hover {
+    box-shadow: 0 0 30px rgba(173, 255, 47, 0.8);
+}
+
+.skill-datacleaning {
+    background: linear-gradient(45deg, #800080, #EE82EE);
+    border: 2px solid #EE82EE;
+    box-shadow: 0 0 20px rgba(238, 130, 238, 0.5);
+    text-shadow: 0 0 10px rgba(238, 130, 238, 0.7);
+}
+
+.skill-datacleaning:hover {
+    box-shadow: 0 0 30px rgba(238, 130, 238, 0.8);
+}
+
+.skill-predictivemodeling {
+    background: linear-gradient(45deg, #1E90FF, #87CEEB);
+    border: 2px solid #87CEEB;
+    box-shadow: 0 0 20px rgba(135, 206, 235, 0.5);
+    text-shadow: 0 0 10px rgba(135, 206, 235, 0.7);
+}
+
+.skill-predictivemodeling:hover {
+    box-shadow: 0 0 30px rgba(135, 206, 235, 0.8);
+}
+
+.skill-dashboard {
+    background: linear-gradient(45deg, #FF69B4, #FF00FF);
+    border: 2px solid #FF00FF;
+    box-shadow: 0 0 20px rgba(255, 0, 255, 0.5);
+    text-shadow: 0 0 10px rgba(255, 0, 255, 0.7);
+}
+
+.skill-dashboard:hover {
+    box-shadow: 0 0 30px rgba(255, 0, 255, 0.8);
 }
 
 .skill-card::before {
@@ -165,6 +347,7 @@ nav ul li a:hover {
     left: -100%;
     width: 100%;
     height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
     background: linear-gradient(90deg, transparent, rgba(255, 111, 97, 0.2), transparent);
     transition: 0.5s;
 }
@@ -173,6 +356,29 @@ nav ul li a:hover {
     left: 100%;
 }
 
+/* Projects Section - Parallax Layout */
+.parallax-section {
+    position: relative;
+    background: rgba(26, 42, 68, 0.8);
+    overflow: visible;
+}
+
+.parallax-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><line x1="0" y1="0" x2="100" y2="100" stroke="rgba(0,128,128,0.1)" /><line x1="0" y1="100" x2="100" y2="0" stroke="rgba(0,128,128,0.1)" /><circle cx="50" cy="50" r="2" fill="rgba(255,111,97,0.2)" /></svg>') repeat;
+    z-index: 0;
+    animation: particleMove 30s linear infinite;
+}
+
+.projects-container {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
 .skill-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
@@ -188,6 +394,66 @@ nav ul li a:hover {
 }
 
 .project-card {
+    position: relative;
+    margin: 4rem 0;
+    height: 500px; /* Adjust based on content */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 1000px;
+}
+
+.project-card.glass-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(0, 128, 128, 0.5);
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(0, 128, 128, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: 100%;
+    height: 100%;
+    position: sticky;
+    top: 20vh; /* Sticks the card in the viewport while scrolling */
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 50px rgba(255, 111, 97, 0.7);
+}
+
+.parallax-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    transform: translateZ(-1px) scale(1.5); /* Creates the parallax effect */
+    filter: brightness(0.7); /* Slightly darken the image for contrast */
+    border-radius: 15px;
+}
+
+.project-content {
+    padding: 2rem;
+    text-align: center;
+    color: #E0E0E0;
+    z-index: 1;
+}
+
+.project-content h3 {
+    color: #FF6F61;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 10px rgba(255, 111, 97, 0.5);
+}
+
+.project-content p {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 0 5px rgba(0, 128, 128, 0.3);
     background-color: #F5F5F5;
     padding: 1.5rem;
     border-radius: 10px;
@@ -251,6 +517,11 @@ form {
 
 form input, form textarea {
     padding: 0.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    color: #E0E0E0;
     border: 1px solid #333333;
     border-radius: 5px;
     font-size: 1rem;
@@ -258,9 +529,12 @@ form input, form textarea {
 }
 
 form input:focus, form textarea:focus {
+    border-color: #FF6F61;
+    box-shadow: 0 0 10px rgba(255, 111, 97, 0.3);
     border-color: #008080;
     box-shadow: 0 0 5px rgba(0, 128, 128, 0.3);
-    outline: none;
+
+  outline: none;
 }
 
 form textarea {
@@ -270,18 +544,52 @@ form textarea {
 
 /* Footer */
 footer {
-    background-color: #333333;
+
+  background: rgba(10, 15, 26, 0.9);
+    color: #E0E0E0;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    box-shadow: 0 -2px 10px rgba(0, 128, 128, 0.2);
+
+  background-color: #333333;
     color: #FFFFFF;
     text-align: center;
     padding: 1.5rem;
     margin-top: 2rem;
-}
+
+  }
 
 .social-links a {
     color: #FF6F61;
     text-decoration: none;
     margin: 0 0.5rem;
-    transition: color 0.3s;
+
+  transition: color 0.3s, text-shadow 0.3s;
+}
+
+.social-links a:hover {
+    color: #E0E0E0;
+    text-shadow: 0 0 10px rgba(255, 111, 97, 0.5);
+}
+
+/* Animations */
+@keyframes particleMove {
+    0% { background-position: 0 0; }
+    100% { background-position: 200% 200%; }
+}
+
+@keyframes neonGlow {
+    from { text-shadow: 0 0 10px rgba(255, 111, 97, 0.7), 0 0 20px rgba(0, 128, 128, 0.5); }
+    to { text-shadow: 0 0 20px rgba(255, 111, 97, 1), 0 0 40px rgba(0, 128, 128, 0.8); }
+}
+
+@keyframes pulseGlow {
+    0% { box-shadow: 0 0 10px rgba(255, 255, 255, 0.3); }
+    50% { box-shadow: 0 0 20px rgba(255, 255, 255, 0.5); }
+    100% { box-shadow: 0 0 10px rgba(255, 255, 255, 0.3); }
+
+  transition: color 0.3s;
 }
 
 .social-links a:hover {
@@ -297,13 +605,18 @@ footer {
 @keyframes moveBackground {
     0% { background-position: 0 0; }
     100% { background-position: 200% 200%; }
-}
+
+  }
 
 /* Responsive Design */
 @media (max-width: 768px) {
     .hero h1 {
-        font-size: 2rem;
-    }
+
+      font-size: 2.5rem;
+
+      font-size: 2rem;
+
+  }
 
     .hero p {
         font-size: 1.2rem;
@@ -318,7 +631,20 @@ footer {
         font-size: 2rem;
     }
 
-    .project-card:hover .card-inner {
-        transform: none; /* Disable flip on mobile for better usability */
+
+  .project-card {
+        height: 400px;
     }
+
+    .project-content h3 {
+        font-size: 1.5rem;
+    }
+
+    .project-content p {
+        font-size: 0.9rem;
+
+      .project-card:hover .card-inner {
+        transform: none; /* Disable flip on mobile for better usability */
+
+      }
 }
